@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+nav{
+    height: 7vh;
+    color: cadetblue;
+    background-color: rgb(221, 224, 228);
+    display: flex;
+    justify-content: space-between;
+}
+.brand{
+  font-family: 'Poppins', sans-serif;   /* modern, professional font */
+  font-size: 2rem;                      /* heading size */
+  font-weight: 700;                     /* bold */
+  letter-spacing: 2px;                  /* spacing between letters */
+  text-transform: uppercase;            
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* subtle shadow */
+  margin: 0;
+}
+nav button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #6ea0c5;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+#navigationLinks{
+  display: flex;
+  justify-content: space-around;
+}
+#dashboard{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+}
+#projects{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+
+}
+#analytics{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+}
+#navigationLinks button:hover{
+  height: 3.1rem;
+  width: 6.1rem;
+  transition: all ease-in-out ;
+  background-color: rgb(229, 229, 236);
+  color: rgb(230, 143, 143);
+
+}
+#content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#createtask{
+  width: 70%;
+  background-color: rgb(230, 243, 238);
+  border-radius: 1.5rem;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.worklist input{
+    min-height: 50px;
+    width: 60%;
+    padding: 0 1rem;
+    outline: none;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.worklist input:focus {
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+#task:hover{
+    border: 2px solid rgb(80, 76, 76);
+    min-height: 52px;
+}
+#createbtn{
+  background-color: #4ab3f4;
+  width: 3rem;
+}
+#createbtn:hover{
+  background-color: #6ea0c5;
+  color: white;
+  border: 2px solid #6ea0c5;
+}
+.worklist{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    
+
+}
+.onetask{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.Text{
+    color: gray;
+    font-weight: bold;
+    border: none;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    width:30vw;
+    height: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #88bad8;
+    cursor: pointer;
+}
+.Text:hover{
+    color: white;
+    border: 1px solid white;
+}
+.done{
+    height: 5.1vh;
+    background-color: rgb(85, 190, 85);
+}
+.recenttask ul li {
+  margin-bottom: 15px;   /* adds gap between tasks */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
