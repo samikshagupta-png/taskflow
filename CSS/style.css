@@ -76,7 +76,7 @@ nav button {
   align-items: center;
 }
 #createtask{
-  width: 70%;
+  width: 60%;
   background-color: rgb(230, 243, 238);
   border-radius: 1.5rem;
   height: 70vh;
@@ -143,16 +143,17 @@ nav button {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #88bad8;
+    background-color: #c2f1ef;
     cursor: pointer;
 }
 .Text:hover{
-    color: white;
-    border: 1px solid white;
+    color: black;
+    border: 1px solid ;
 }
 .done{
     height: 5.1vh;
-    background-color: rgb(85, 190, 85);
+    background-color: rgb(172, 195, 150);
+    border: none;
 }
 .recenttask ul li {
   margin-bottom: 15px;   /* adds gap between tasks */

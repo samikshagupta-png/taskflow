@@ -1,0 +1,32 @@
+#backbtn{
+  width: 6rem;
+  height: 40px;
+  border: none;
+  border-radius: 1.44rem;
+  background: #6ea0c5;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.status{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#totaltask, #completed, #pending {
+    width: 29%;              /* give them width */
+    height: 10vh;
+    background-color: aliceblue;
+    border-radius: 1.6rem;
+    border: 1px solid white;
+    color: blue;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    display: flex;   
+       /* center text */
+    align-items: center;
+    justify-content: center;
+}

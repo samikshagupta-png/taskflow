@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboardpage</title>
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+</head>
+<body>
+    <main>
+        <button id="backbtn">Home</button>
+        <div class="status"><br>
+            <div id="totaltask"></div>
+             <div id="completed"></div>
+            <div id="pending"></div>
+        </div>
+        <div id =recenttasksection></div>
+        <form class="worklist">
+                    <input type="text" id="searchtask" name="task" placeholder="search your task">
+                    <button type="submit" id="searchbtn"><b>search</b></button>
+        </form>
+    </main>
+    <script >
+        function updateStatus() {
+            const total = recentTaskList.querySelectorAll("li").length;
+            const completed = recentTaskList.querySelectorAll("li.completed").length;
+            const pending = total - completed;
+
+            document.getElementById("totaltask").textContent = `Total Tasks: ${total}`;
+            document.getElementById("completed").textContent = `Completed: ${completed}`;
+            document.getElementById("pending").textContent = `Pending: ${pending}`;
+        }
+
+
+    </script>
+</body>
+</html>
