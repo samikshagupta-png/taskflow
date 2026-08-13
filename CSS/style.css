@@ -84,6 +84,8 @@ nav button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: max-content;
+  
 
 }
 #createtask{
@@ -106,24 +108,31 @@ nav button {
 }
 .worklist input{
     min-height: 50px;
-    width: 60%;
+    width: 80%;
     padding: 0 1rem;
     outline: none;
     display: flex;
-    
+    border-radius: 2rem;
+    border:none;
     flex-wrap: wrap;
    
 }
 .worklist label {
   display: inline-flex;
   align-items: center;
-  margin-right: 15px; /* space between checkboxes */
-  font-size: 0.9rem;
+  margin-right: 20px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 .checkbox-group {
   display: flex;
   gap: 15px; /* spacing between items */
-  cursor: pointer;
+  
+}
+.worklist input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #6ea0c5;     /* modern color for radio buttons */
+  
 }
 
 .checkbox-group label {
@@ -152,11 +161,10 @@ nav button {
   color: white;
   border: 2px solid #6ea0c5;
 }
-.worklist{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
-    
+.worklist {
+  display: flex;
+  flex-direction: column;   /* stack neatly */
+  align-items: flex-start;  /* align to left */
 
 }
 .onetask{

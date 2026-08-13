@@ -47,16 +47,27 @@
     background: linear-gradient(135deg, #fff3cd, #ffffff);
     color: #856404;
 }
-.searchlist{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
+.searchlist {
+  display: flex;
+  align-items: center;
+  gap: 1rem;              /* spacing between items */
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+
+.searchlist input[type="text"] {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  flex: 1;                /* make search bar expand */
 }
 .searchlist input:focus {
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
 .mainbox{
     display: flex;
+    justify-content: space-around;
     width: 100%;
     gap:2rem;
 }
@@ -68,4 +79,59 @@
     padding: 1rem;
     flex-direction: column;
     border: 1px solid whitesmoke;
+}
+#searchtask {
+    min-height: 50px;
+    width: 80%;
+    padding: 0 1rem;
+    outline: none;
+    display: flex;
+    border-radius: 2rem;
+    /* border:none; */
+    border: 1px solid gray;
+    flex-wrap: wrap;
+
+}
+.prioritydiv{
+    border: 2px solid rgb(240, 236, 236);
+    box-shadow: #d0e6f7;
+    width: max-content;
+    cursor: pointer;
+    height: 2rem;
+    
+    gap:0.5rem;
+}
+.statusdiv{
+    border: 2px solid rgb(240, 236, 236);
+    box-shadow: #d0e6f7;
+    width: max-content;
+    cursor: pointer;
+    height: 2rem;
+   
+    gap:0.5rem;
+}
+.prioritydiv select, .statusdiv select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+#searchbtn{
+    color:#856404;
+    background-color: rgb(211, 222, 222);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 1.5rem;
+}
+#taskpriority{
+  color:gray;
+  background-color: rgb(216, 211, 204);
+}
+#status{
+    
+  color:gray;
+  background-color: rgb(216, 211, 204);
+
 }

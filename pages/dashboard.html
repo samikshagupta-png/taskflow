@@ -25,9 +25,22 @@
                     <ol></ol>
                 </li>
             </div>
-        </div>
+        </div><br>
         <form class="searchlist">
                     <input type="text" id="searchtask" name="task" placeholder="search task">
+                    <div class="prioritydiv"><label for="priority">Priority:</label>
+                        <select id="taskpriority" name="priority">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                        </select></div>
+                        
+                        <div class="statusdiv"><label for="status">Status:</label>
+                        <select id="status" name="status">
+                        <option value="completed">completed</option>
+                        <option value="pending">pending</option>
+                        <option value="overdue">overdue</option>
+                        </select></div>
                     <button type="submit" id="searchbtn"><b>search</b></button>
         </form>
     
