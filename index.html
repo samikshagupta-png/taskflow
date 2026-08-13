@@ -13,9 +13,11 @@
     </nav><br>
     <main>
         <div id="navigationLinks">
+            <button id="homebtn">home</button>
             <button id="dashboard">Dashboard</button>
             <button id="projects">projects</button>
             <button id="analytics">Analytics</button>
+            
         </div><br>
         <hr><br>
         <h2 id="username"></h2>
@@ -26,9 +28,22 @@
                 <div class="hero">
                     <h3>create task</h3>
                 <form class="worklist">
-                    <input type="text" id="task" name="task" placeholder="Add your task">
-                    <button type="submit" id="createbtn"><b>create</b></button>
-                </form>
+  <input type="text" id="task" name="task" placeholder="Add your task">
+
+  <p>Select Priority:</p>
+  <label>
+    <input type="radio" name="priority" value="high"> High
+  </label>
+  <label>
+    <input type="radio" name="priority" value="medium"> Medium
+  </label>
+  <label>
+    <input type="radio" name="priority" value="low"> Low
+  </label>
+
+  <button type="submit" id="createbtn"><b>Create</b></button>
+</form>
+
                 <br>
                 <div class="recenttask">
                 <p><u>recent-task:</u></p>

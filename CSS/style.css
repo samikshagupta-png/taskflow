@@ -45,6 +45,15 @@ nav button {
   background-color: rgb(251, 251, 242);
   border: 2px solid ;
 }
+#homebtn{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+
+}
 #projects{
   height: 3rem;
   width: 6rem;
@@ -72,8 +81,10 @@ nav button {
 }
 #content{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 #createtask{
   width: 60%;
@@ -99,9 +110,27 @@ nav button {
     padding: 0 1rem;
     outline: none;
     display: flex;
+    
     flex-wrap: wrap;
    
 }
+.worklist label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px; /* space between checkboxes */
+  font-size: 0.9rem;
+}
+.checkbox-group {
+  display: flex;
+  gap: 15px; /* spacing between items */
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center; /* align text with checkbox */
+}
+
 .worklist input:focus {
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
@@ -111,7 +140,12 @@ nav button {
 }
 #createbtn{
   background-color: #4ab3f4;
-  width: 3rem;
+  width: 4rem;
+  height: 1.9rem;
+}
+#priority{
+  color:gray;
+  background-color: rgb(216, 211, 204);
 }
 #createbtn:hover{
   background-color: #6ea0c5;

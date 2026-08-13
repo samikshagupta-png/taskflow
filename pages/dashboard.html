@@ -7,19 +7,30 @@
     <link rel="stylesheet" href="/CSS/dashboard.css">
 </head>
 <body>
-    <main>
-        <button id="backbtn">Home</button>
-        <div class="status"><br>
-            <div id="totaltask"></div>
-             <div id="completed"></div>
-            <div id="pending"></div>
+    
+        
+        <div class="mainbox">
+            <div class="status">
+                <div id="totaltask">Total-tasks:0</div>
+                <div id="completed">completed-task:0</div>
+                <div id="pending">pending-tasks:0</div>
+            </div>
+            <div id =recenttasksection>
+                <h2>Recent-tasks</h2>
+                <li>
+                    <ol></ol>
+                    <ol></ol>
+                    <ol></ol>
+                    <ol></ol>
+                    <ol></ol>
+                </li>
+            </div>
         </div>
-        <div id =recenttasksection></div>
-        <form class="worklist">
-                    <input type="text" id="searchtask" name="task" placeholder="search your task">
+        <form class="searchlist">
+                    <input type="text" id="searchtask" name="task" placeholder="search task">
                     <button type="submit" id="searchbtn"><b>search</b></button>
         </form>
-    </main>
+    
     <script >
         function updateStatus() {
             const total = recentTaskList.querySelectorAll("li").length;

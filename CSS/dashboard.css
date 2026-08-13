@@ -1,32 +1,71 @@
-#backbtn{
-  width: 6rem;
-  height: 40px;
-  border: none;
-  border-radius: 1.44rem;
-  background: #6ea0c5;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-.status{
+
+.status {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 50%;
+    gap: 1.5rem;
+    
 }
+
 #totaltask, #completed, #pending {
-    width: 29%;              /* give them width */
+    width: 300px;
     height: 10vh;
-    background-color: aliceblue;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
     border-radius: 1.6rem;
-    border: 1px solid white;
-    color: blue;
+    border: 1px solid #d0e6f7;
+    color: #004080;
+    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
     line-height: 1.4;
-    display: flex;   
-       /* center text */
+    display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Hover effect */
+#totaltask:hover, #completed:hover, #pending:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #d6f0ff, #f9f9f9);
+}
+
+/* Different colors for clarity */
+#totaltask {
+    background: linear-gradient(135deg, #d1eaff, #ffffff);
+    color: #0056b3;
+}
+#completed {
+    background: linear-gradient(135deg, #d4edda, #ffffff);
+    color: #155724;
+}
+#pending {
+    background: linear-gradient(135deg, #fff3cd, #ffffff);
+    color: #856404;
+}
+.searchlist{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.searchlist input:focus {
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+.mainbox{
+    display: flex;
+    width: 100%;
+    gap:2rem;
+}
+#recenttasksection{
+    width: 40%;
+    background-color: #d0c39b;
+    border-radius: 1.8rem;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    border: 1px solid whitesmoke;
 }
