@@ -3,13 +3,58 @@ const form = document.querySelector(".worklist");
 let task = document.querySelector("#task");
 const recentTaskList = document.querySelector(".recenttask ul");
 let dashboard = document.querySelector("#dashboard");
+let home = document.querySelector("#homebtn");
+let project = document.querySelector("#projects");
+let analytics = document.querySelector("#analytics");
+let navbutton = document.querySelectorAll("#navigationLinks button");
+
+function setActive(button) {
+  navbutton.forEach(btn => {
+    btn.classList.remove("active");
+  });
+  button.classList.add("active");
+}
+
+
+navbutton.forEach(btn => {
+  btn.addEventListener("click", () => {
+    setActive(btn);
+  });
+});
+
+
+
 
 
 dashboard.addEventListener("click", async function() {
   const response = await fetch("pages/dashboard.html");
   const html = await response.text();
   document.querySelector("#content").innerHTML = html;
+  setActive(dashboard);
 });
+
+
+home.addEventListener("click", function() {
+  
+});
+
+
+project.addEventListener("click", async function() {
+  const response = await fetch("pages/projects.html");
+  const html = await response.text();
+  document.querySelector("#content").innerHTML = html;
+  setActive(project);
+});
+
+
+analytics.addEventListener("click", async function() {
+  const response = await fetch("pages/analytics.html");
+  const html = await response.text();
+  document.querySelector("#content").innerHTML = html;
+  setActive(analytics);
+});
+
+
 
 const gradients = [
   "linear-gradient(to right, #d0c2dc, #FFFFFF)", 
@@ -24,7 +69,7 @@ themeswitcher.addEventListener("click", function() {
   current = (current + 1) % gradients.length;
 });
 
-// consistent key name
+
 const taskKey = "tasks";
 
 function saveTasks() {

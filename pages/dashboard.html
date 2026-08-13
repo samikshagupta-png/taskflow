@@ -17,13 +17,13 @@
             </div>
             <div id =recenttasksection>
                 <h2>Recent-tasks</h2>
-                <li>
-                    <ol></ol>
-                    <ol></ol>
-                    <ol></ol>
-                    <ol></ol>
-                    <ol></ol>
-                </li>
+                <ol>
+                    <li></li><br>
+                    <li></li><br>
+                    <li></li><br>
+                    <li></li><br>
+                    <li></li><br>
+                </ol>
             </div>
         </div><br>
         <form class="searchlist">
@@ -43,19 +43,12 @@
                         </select></div>
                     <button type="submit" id="searchbtn"><b>search</b></button>
         </form>
-    
-    <script >
-        function updateStatus() {
-            const total = recentTaskList.querySelectorAll("li").length;
-            const completed = recentTaskList.querySelectorAll("li.completed").length;
-            const pending = total - completed;
-
-            document.getElementById("totaltask").textContent = `Total Tasks: ${total}`;
-            document.getElementById("completed").textContent = `Completed: ${completed}`;
-            document.getElementById("pending").textContent = `Pending: ${pending}`;
-        }
-
-
-    </script>
+        <div>
+            <ul>
+                <li></li>
+                
+            </ul>
+        </div>
+    <script src="filters.js"></script>
 </body>
 </html>

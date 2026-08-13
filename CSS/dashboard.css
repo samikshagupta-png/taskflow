@@ -69,10 +69,10 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    gap:2rem;
+    
 }
 #recenttasksection{
-    width: 40%;
+    width: 30%;
     background-color: #d0c39b;
     border-radius: 1.8rem;
     display: flex;
