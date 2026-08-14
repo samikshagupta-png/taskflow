@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 body{
     height: 100%;
@@ -12,6 +13,10 @@ nav{
     background-color: rgb(221, 224, 228);
     display: flex;
     justify-content: space-between;
+}
+#option{
+  gap:1rem;
+  
 }
 .brand{
   font-family: 'Poppins', sans-serif;   /* modern, professional font */
@@ -100,7 +105,7 @@ nav button {
 
 }
 #createtask{
-  width: 60%;
+  width: 50%;
   background-color: rgb(230, 243, 238);
   border-radius: 1.5rem;
   /* height: 70vh; */
@@ -208,8 +213,16 @@ nav button {
 }
 .done{
     height: 5.1vh;
+    width: 2rem;
     background-color: rgb(172, 195, 150);
     border: none;
+}
+.overdue{
+    height: 5.1vh;
+    width: 2rem;
+    background-color: rgb(217, 143, 103);
+    border: none;
+
 }
 .recenttask ul li {
   margin-bottom: 15px;   /* adds gap between tasks */

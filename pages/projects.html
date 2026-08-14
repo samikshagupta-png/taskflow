@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project page</title>
+    <link rel="stylesheet" href="/CSS/modal.css">
+</head>
+<body>
+    <h1>My projects</h1>
+    <p><small>manage and track all your projects in one place.</small></p>
+    <div class="section">
+        <div class="firstsection">
+            <h1>your projects shown here</h1>
+
+        </div>
+        <div class="secondsection">
+            <div class="projectsection">
+                <p>Create new projects</p><hr>
+                <form>
+                    <label>project title:</label><br>
+                     <input type="text" id="projecttitle" name="projecttitle" required>
+                    <br>
+                    <label>Description: </label>
+                    <textarea id="projectdes"></textarea><br>
+                    <label>category: </label>
+                        <select id="taskcategory" name="category">
+                            <option value="web development">web development</option>
+                            <option value="A.I & M.L">A.I & M.L</option>
+                            <option value ="Mobile App">Mobile App</option>
+                            <option value="coursework">coursework</option>
+                        </select>
+                        <br><br>
+                    <label>Due date:</label>
+                     <input type="date" id="taskDate" name="taskDate"><br>
+                    <button type="submit" id="createproject"><b>Create project</b></button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="/JS/projects.js"></script>
+</body>
+</html>

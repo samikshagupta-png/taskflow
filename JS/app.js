@@ -14,8 +14,6 @@ function setActive(button) {
   });
   button.classList.add("active");
 }
-
-
 navbutton.forEach(btn => {
   btn.addEventListener("click", () => {
     setActive(btn);
@@ -98,9 +96,12 @@ function addTask(taskValue) {
   textDiv.textContent = taskValue;
 
   const doneBtn = document.createElement("button");
+  const overduebtn = document.createElement("button");
 
-  doneBtn.textContent = "Complete";
+  doneBtn.textContent = "✅";
+  overduebtn.textContent ="🗑️";
   doneBtn.classList.add("done");
+  overduebtn.classList.add("overdue");
 
   doneBtn.addEventListener("click", function() {
     li.remove();
@@ -108,9 +109,14 @@ function addTask(taskValue) {
     updateStatus();
 
   });
+  overduebtn.addEventListener("click",function(){
+    overduebtn.disabled=true;
+    updateStatus();
+  })
 
   taskDiv.appendChild(textDiv);
   taskDiv.appendChild(doneBtn);
+  taskDiv.appendChild(overduebtn);
   li.appendChild(taskDiv);
   recentTaskList.appendChild(li);
   updateStatus();
