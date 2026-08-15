@@ -17,9 +17,60 @@
     height: auto;
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap:1rem;
+
+}
+.project-card {
+    height: min-content;
+    background: white;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-card-header h2 {
+    margin: 0;
+}
+
+.project-description {
+    color: #666;
+    line-height: 1.5;
+    margin: 2rem 0;
+}
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    color: #555;
+}
+
+.delete-project {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    
+}
+
+.delete-project:hover {
+    transform: scale(1.15);
 }
 .secondsection{
-    width: 23%;
+    width: 24%;
     border: 2px solid rgb(157, 157, 196);
     border-radius: 1.5rem;
     height: 61vh;

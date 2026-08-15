@@ -28,15 +28,19 @@ home.addEventListener("click",function(){
   window.location.href="index.html";
 });
 project.addEventListener("click", async function() {
-  const response = await fetch("pages/projects.html");
-  const html = await response.text();
-  document.querySelector("#content").innerHTML = html;
 
-  // call dashboard loader after injection
-  if (typeof loadDashboardTasks === "function") {
-    loadDashboardTasks();
-  }
+    const response = await fetch("pages/projects.html");
+    const html = await response.text();
+
+    document.querySelector("#content").innerHTML = html;
+
+    // Initialize projects AFTER HTML exists
+    if (typeof initProjects === "function") {
+        initProjects();
+    }
 });
+
+
 analytics.addEventListener("click", async function() { 
   const response = await fetch("pages/analytics.html"); 
   const html = await response.text(); 
@@ -47,6 +51,7 @@ analytics.addEventListener("click", async function() {
   } 
   showtasklevel();
 });
+
 const gradients = [
   "linear-gradient(to right, #d0c2dc, #FFFFFF)", 
   "linear-gradient(to right, #6fb9f6, #e9b7b7)", 

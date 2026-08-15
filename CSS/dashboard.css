@@ -4,13 +4,13 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 50%;
+    width: 30%;
     gap: 1.5rem;
     
 }
 
 #totaltask, #completed, #pending {
-    width: 300px;
+    width: auto;
     height: 10vh;
     background: linear-gradient(135deg, #e0f7fa, #ffffff);
     border-radius: 1.6rem;
@@ -72,13 +72,17 @@
     
 }
 #recenttasksection{
-    width: 30%;
+    width: 40%;
     background-color: #d0c39b;
     border-radius: 1.8rem;
     display: flex;
     padding: 1rem;
     flex-direction: column;
     border: 1px solid whitesmoke;
+}
+#recenttasksection ul{
+    padding:1rem;
+
 }
 #searchtask {
     min-height: 50px;

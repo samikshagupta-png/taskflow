@@ -13,8 +13,8 @@
 }
 .high{
     height: 100%;
-    width: 30%;
-    background-color: rgb(182, 192, 180);
+    width: 26%;
+    background-color: rgb(156, 208, 145);
     border: none;
     border-radius: 1.5rem;
     display: flex;
@@ -22,11 +22,15 @@
     align-items: center;
     flex-wrap: wrap;
     gap:0.7rem;
+    border: 1px solid whitesmoke;
+    padding: 1rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
 }
 .medium{
     height: 100%;
-    width: 30%;
-    background-color: rgb(179, 192, 179);
+    width: 26%;
+    background-color: rgb(139, 176, 216);
     border: none;
     border-radius: 1.5rem;
     display: flex;
@@ -34,11 +38,15 @@
     align-items: center;
     flex-wrap: wrap;
     gap:0.7rem;
+    border: 1px solid whitesmoke;
+    padding: 1rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
 }
 .low{
     height: 100%;
-    width: 30%;
-   background-color: rgb(174, 194, 174);
+    width: 26%;
+   background-color: rgb(239, 199, 182);
     border: none;
     border-radius: 1.5rem;
     display: flex;
@@ -46,12 +54,17 @@
     align-items: center;
     flex-wrap: wrap;
     gap:0.7rem;
+    border: 1px solid whitesmoke;
+    padding: 1rem;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
 }
 .box{
     width: 90%;
     border-radius: 1.5rem;
-    height: 1.8rem;
+    height: 1.9rem;
     display: flex;
     justify-content: center;
-    background-color: rgb(80, 189, 153);
+    background-color: rgb(197, 203, 26);
+    
 }
