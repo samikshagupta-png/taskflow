@@ -1,48 +1,20 @@
-const taskKey = "tasks";
+import { saveTasks, loadTasks, addTask, updateStatus } from "./projects.js";
 
-function loadDashboardTasks() {
+// Example: search functionality
+function showSearchResults(searchValue) {
+  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   const section = document.querySelector("#recenttasksection");
-  if (!section) return; // guard against null
 
-  const tasks = JSON.parse(localStorage.getItem(taskKey)) || [];
   section.innerHTML = `
-    <h2>Recent-tasks</h2>
-    <ul id="recenttasklist"></ul>
+    <h2>Search Results</h2>
+    <ul id="searchtasklist"></ul>
   `;
 
-  const list = section.querySelector("#recenttasklist");
+  const list = section.querySelector("#searchtasklist");
 
-  // tasks are now objects { text, status }
-  tasks.forEach(taskObj => {
-    const li = document.createElement("li");
-    li.textContent = taskObj.text;
-
-    if (taskObj.status === "completed") {
-      li.classList.add("completed");
+  tasks.forEach((taskObj, index) => {
+    if (taskObj.text.toLowerCase().includes(searchValue.toLowerCase())) {
+      addTask(taskObj.text, taskObj.status, list);
     }
-
-    list.appendChild(li);
   });
-
-  updateStatus();
 }
-
-function updateStatus() {
-  const list = document.querySelector("#recenttasklist");
-  if (!list) return;
-
-  const total = list.querySelectorAll("li").length;
-  const completed = list.querySelectorAll("li.completed").length;
-  const pending = total - completed;
-
-  document.getElementById("totaltask").textContent = `Total Tasks: ${total}`;
-  document.getElementById("completed").textContent = `Completed: ${completed}`;
-  document.getElementById("pending").textContent = `Pending: ${pending}`;
-}
-
-// Run only when dashboard section exists
-window.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector("#recenttasksection")) {
-    loadDashboardTasks();
-  }
-});

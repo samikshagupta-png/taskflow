@@ -1,3 +1,4 @@
+import { saveTasks, loadTasks, addTask, updateStatus } from "./projects.js";
 let themeswitcher = document.querySelector("#themebtn");
 const form = document.querySelector(".worklist");
 let task = document.querySelector("#task");
@@ -57,80 +58,19 @@ themeswitcher.addEventListener("click", function() {
 
 
 
-// ✅ Save both text and status
-function saveTasks() {
-  const tasks = [];
-  recentTaskList.querySelectorAll("li").forEach(li => {
-    const text = li.querySelector(".Text").textContent;
-    const status = li.classList.contains("completed") ? "completed" : "pending";
-    tasks.push({ text, status });
-  });
-  localStorage.setItem(taskKey, JSON.stringify(tasks));
-}
-
-// ✅ Load tasks with status
-function loadTasks() {
-  const tasks = JSON.parse(localStorage.getItem(taskKey)) || [];
-  tasks.forEach(taskObj => {
-    addTask(taskObj.text, taskObj.status);
-  });
-}
-
-// ✅ Add task with status
-function addTask(taskValue, status = "pending") {
-  const li = document.createElement("li");
-
-  const taskDiv = document.createElement("div");
-  taskDiv.classList.add("onetask");
-
-  const textDiv = document.createElement("div");
-  textDiv.classList.add("Text");
-  textDiv.textContent = taskValue;
-
-  const doneBtn = document.createElement("button");
-  const overduebtn = document.createElement("button");
-
-  doneBtn.textContent = "✅";
-  overduebtn.textContent = "🗑️";
-  doneBtn.classList.add("done");
-  overduebtn.classList.add("overdue");
-
-  // restore status when loading
-  if (status === "completed") {
-    li.classList.add("completed");
-  }
-
-  doneBtn.addEventListener("click", function() {
-    li.classList.add("completed");   // mark as completed
-    saveTasks();
-    updateStatus();
-    taskDiv.remove();
-    li.remove();
-  });
-
-  overduebtn.addEventListener("click", function() {
-    li.remove();                     // delete task
-    saveTasks();
-    updateStatus();
-  });
-
-  taskDiv.appendChild(textDiv);
-  taskDiv.appendChild(doneBtn);
-  taskDiv.appendChild(overduebtn);
-  li.appendChild(taskDiv);
-  recentTaskList.appendChild(li);
-  updateStatus();
-}
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   const taskValue = task.value.trim();
 
   if (taskValue) {
-    addTask(taskValue);
-    saveTasks();
+    addTask(taskValue,"pending",recentTaskList);
+    saveTasks(recentTaskList);
     task.value = "";
   }
+});
+window.addEventListener("DOMContentLoaded", () => {
+  loadTasks(recentTaskList, addTask);
 });
 
 // load saved tasks on page load
