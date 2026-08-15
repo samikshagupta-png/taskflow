@@ -1,22 +1,66 @@
-let searchtask = document.querySelector("#searchtask");
-let taskpriority =  document.querySelector("#taskpriority");
-let status = document.querySelector("#status");
 
+function setupTaskSearch() {
 
+    const searchtask = document.querySelector("#searchtask");
+    const forms = document.querySelector(".searchlist");
+    const searchlists = document.querySelector(".searchlists");
+
+    // If dashboard isn't loaded, stop
+    if (!searchtask || !forms || !searchlists) {
+        return;
+    }
+  
 const taskKey = "tasks";
-// form.addEventListener("submit", function(event) {
-//   event.preventDefault();
-//   const seatchtask = task.value.trim();
+if (forms) {
+  forms.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-//   if (searchtask === "taskObj.text") {
-//     ShowTask(searchtask);
-//     task.value = "";
-//   }
-// });
-function Showtask(){
-  const searchlist = document.createElement("li");
-  searchlist.classList.add("lists")
-  searchlist.textContent=searchtask;
+    const searchvalue = searchtask.value.trim().toLowerCase();
+
+    if (searchvalue === "") {
+      searchlists.innerHTML = "<p>Please enter a task to search.</p>";
+      return;
+    }
+
+    Showtask(searchvalue);
+
+    searchtask.value = "";
+  });
+}
+}
+
+function Showtask(searchvalue){
+  const searchlists =
+        document.querySelector(".searchlists");
+
+
+    if (!searchlists) {
+        return;
+    }
+
+  const tasks = JSON.parse(localStorage.getItem(taskKey)) || [];
+  searchlists.innerHTML="";
+  const matchingTasks = tasks.filter(function(taskObj){
+    return taskObj.text.toLowerCase().includes(searchvalue);
+  });
+  if(matchingTasks.length === 0){
+    searchlists.innerHTML = "<p>No matching task found.</p>";
+        return;
+  }
+  const ul = document.createElement("ul");
+  matchingTasks.forEach(function(taskObj){
+    const lis=document.createElement("li");
+    lis.textContent = taskObj.text;
+    if(taskObj.status){
+      lis.textContent +=` : ${taskObj.status}  status`;
+    }
+    if(taskObj.priority){
+      lis.textContent += `-${taskObj.priority}`
+    }
+    ul.appendChild(lis);
+  });
+  searchlists.appendChild(ul);
+  
 
 }
 

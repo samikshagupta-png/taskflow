@@ -7,7 +7,7 @@ let home = document.querySelector("#homebtn");
 let project = document.querySelector("#projects");
 let analytics = document.querySelector("#analytics");
 let navbutton = document.querySelectorAll("#navigationLinks button");
-
+const taskKey = "tasks";
 dashboard.addEventListener("click", async function() {
   const response = await fetch("pages/dashboard.html");
   const html = await response.text();
@@ -17,6 +17,10 @@ dashboard.addEventListener("click", async function() {
   if (typeof loadDashboardTasks === "function") {
     loadDashboardTasks();
   }
+  if (typeof setupTaskSearch === "function") {
+        setupTaskSearch();
+    }
+
 });
 
 home.addEventListener("click",function(){
@@ -65,7 +69,7 @@ function saveTasks() {
   recentTaskList.querySelectorAll("li").forEach(li => {
     const text = li.querySelector(".Text").textContent;
     const status = li.classList.contains("completed") ? "completed" : "pending";
-    tasks.push({ text, status });
+    tasks.push({ text:text, status:status });
   });
   localStorage.setItem(taskKey, JSON.stringify(tasks));
 }
