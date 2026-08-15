@@ -8,52 +8,40 @@ let project = document.querySelector("#projects");
 let analytics = document.querySelector("#analytics");
 let navbutton = document.querySelectorAll("#navigationLinks button");
 
-function setActive(button) {
-  navbutton.forEach(btn => {
-    btn.classList.remove("active");
-  });
-  button.classList.add("active");
-}
-navbutton.forEach(btn => {
-  btn.addEventListener("click", () => {
-    setActive(btn);
-  });
-});
-
-
-
-
-
 dashboard.addEventListener("click", async function() {
   const response = await fetch("pages/dashboard.html");
   const html = await response.text();
   document.querySelector("#content").innerHTML = html;
-  setActive(dashboard);
+
+  // call dashboard loader after injection
+  if (typeof loadDashboardTasks === "function") {
+    loadDashboardTasks();
+  }
 });
 
-
-home.addEventListener("click", function() {
-  
+home.addEventListener("click",function(){
+  window.location.href="index.html";
 });
-
-
 project.addEventListener("click", async function() {
   const response = await fetch("pages/projects.html");
   const html = await response.text();
   document.querySelector("#content").innerHTML = html;
-  setActive(project);
+
+  // call dashboard loader after injection
+  if (typeof loadDashboardTasks === "function") {
+    loadDashboardTasks();
+  }
 });
-
-
 analytics.addEventListener("click", async function() {
   const response = await fetch("pages/analytics.html");
   const html = await response.text();
   document.querySelector("#content").innerHTML = html;
-  setActive(analytics);
+
+  // call dashboard loader after injection
+  if (typeof loadDashboardTasks === "function") {
+    loadDashboardTasks();
+  }
 });
-
-
-
 const gradients = [
   "linear-gradient(to right, #d0c2dc, #FFFFFF)", 
   "linear-gradient(to right, #6fb9f6, #e9b7b7)", 
@@ -68,24 +56,28 @@ themeswitcher.addEventListener("click", function() {
 });
 
 
-const taskKey = "tasks";
 
+// ✅ Save both text and status
 function saveTasks() {
   const tasks = [];
-  recentTaskList.querySelectorAll(".Text").forEach(textDiv => {
-    tasks.push(textDiv.textContent);
+  recentTaskList.querySelectorAll("li").forEach(li => {
+    const text = li.querySelector(".Text").textContent;
+    const status = li.classList.contains("completed") ? "completed" : "pending";
+    tasks.push({ text, status });
   });
   localStorage.setItem(taskKey, JSON.stringify(tasks));
 }
 
+// ✅ Load tasks with status
 function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem(taskKey)) || [];
-  tasks.forEach(taskValue => {
-    addTask(taskValue);
+  tasks.forEach(taskObj => {
+    addTask(taskObj.text, taskObj.status);
   });
 }
 
-function addTask(taskValue) {
+// ✅ Add task with status
+function addTask(taskValue, status = "pending") {
   const li = document.createElement("li");
 
   const taskDiv = document.createElement("div");
@@ -99,20 +91,28 @@ function addTask(taskValue) {
   const overduebtn = document.createElement("button");
 
   doneBtn.textContent = "✅";
-  overduebtn.textContent ="🗑️";
+  overduebtn.textContent = "🗑️";
   doneBtn.classList.add("done");
   overduebtn.classList.add("overdue");
 
-  doneBtn.addEventListener("click", function() {
-    li.remove();
-    saveTasks(); // update storage after removal
-    updateStatus();
+  // restore status when loading
+  if (status === "completed") {
+    li.classList.add("completed");
+  }
 
-  });
-  overduebtn.addEventListener("click",function(){
-    overduebtn.disabled=true;
+  doneBtn.addEventListener("click", function() {
+    li.classList.add("completed");   // mark as completed
+    saveTasks();
     updateStatus();
-  })
+    taskDiv.remove();
+    li.remove();
+  });
+
+  overduebtn.addEventListener("click", function() {
+    li.remove();                     // delete task
+    saveTasks();
+    updateStatus();
+  });
 
   taskDiv.appendChild(textDiv);
   taskDiv.appendChild(doneBtn);
