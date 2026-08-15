@@ -11,10 +11,10 @@
     height: 50vh;
     gap:1rem;
 }
-.todo{
+.high{
     height: 100%;
     width: 30%;
-    background-color: rgb(182, 192, 182);
+    background-color: rgb(182, 192, 180);
     border: none;
     border-radius: 1.5rem;
     display: flex;
@@ -23,10 +23,10 @@
     flex-wrap: wrap;
     gap:0.7rem;
 }
-.progress{
+.medium{
     height: 100%;
     width: 30%;
-    background-color: rgb(173, 190, 173);
+    background-color: rgb(179, 192, 179);
     border: none;
     border-radius: 1.5rem;
     display: flex;
@@ -35,7 +35,7 @@
     flex-wrap: wrap;
     gap:0.7rem;
 }
-.Done{
+.low{
     height: 100%;
     width: 30%;
    background-color: rgb(174, 194, 174);
@@ -50,6 +50,8 @@
 .box{
     width: 90%;
     border-radius: 1.5rem;
-    height: 20%;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
     background-color: rgb(80, 189, 153);
 }

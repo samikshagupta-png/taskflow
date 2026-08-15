@@ -7,6 +7,7 @@ let home = document.querySelector("#homebtn");
 let project = document.querySelector("#projects");
 let analytics = document.querySelector("#analytics");
 let navbutton = document.querySelectorAll("#navigationLinks button");
+const priorityInputs = document.querySelectorAll('input[name="priority"]');
 const taskKey = "tasks";
 dashboard.addEventListener("click", async function() {
   const response = await fetch("pages/dashboard.html");
@@ -36,15 +37,15 @@ project.addEventListener("click", async function() {
     loadDashboardTasks();
   }
 });
-analytics.addEventListener("click", async function() {
-  const response = await fetch("pages/analytics.html");
-  const html = await response.text();
-  document.querySelector("#content").innerHTML = html;
+analytics.addEventListener("click", async function() { 
+  const response = await fetch("pages/analytics.html"); 
+  const html = await response.text(); 
+  document.querySelector("#content").innerHTML = html; 
 
-  // call dashboard loader after injection
-  if (typeof loadDashboardTasks === "function") {
-    loadDashboardTasks();
-  }
+  if (typeof loadDashboardTasks === "function") { 
+    loadDashboardTasks(); 
+  } 
+  showtasklevel();
 });
 const gradients = [
   "linear-gradient(to right, #d0c2dc, #FFFFFF)", 
@@ -61,7 +62,10 @@ themeswitcher.addEventListener("click", function() {
 if (typeof loadDashboardTasks === "function") {
     loadDashboardTasks();
 }
-
+function getSelectedPriority() {
+  const selected = document.querySelector('input[name="priority"]:checked');
+  return selected ? selected.value : null;
+}
 
 // ✅ Save both text and status
 function saveTasks() {
@@ -69,7 +73,8 @@ function saveTasks() {
   recentTaskList.querySelectorAll("li").forEach(li => {
     const text = li.querySelector(".Text").textContent;
     const status = li.classList.contains("completed") ? "completed" : "pending";
-    tasks.push({ text:text, status:status });
+    const priority = li.dataset.priority;
+    tasks.push({ text:text, status:status,priority:priority });
   });
   localStorage.setItem(taskKey, JSON.stringify(tasks));
 }
@@ -78,14 +83,14 @@ function saveTasks() {
 function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem(taskKey)) || [];
   tasks.forEach(taskObj => {
-    addTask(taskObj.text, taskObj.status);
+    addTask(taskObj.text, taskObj.status,taskObj.priority);
   });
 }
 
 // ✅ Add task with status
-function addTask(taskValue, status = "pending") {
+function addTask(taskValue, status = "pending",priority="medium") {
   const li = document.createElement("li");
-
+  li.dataset.priority=priority;
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("onetask");
 
@@ -130,14 +135,22 @@ function addTask(taskValue, status = "pending") {
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
-  const taskValue = task.value.trim();
 
-  if (taskValue) {
-    addTask(taskValue);
+  const taskValue = task.value.trim();
+  const priority = getSelectedPriority();
+
+  if (taskValue && priority) {
+    addTask(taskValue, "pending", priority);
+
     saveTasks();
+
     task.value = "";
+
+    // clear selected priority
+    document
+      .querySelectorAll('input[name="priority"]')
+      .forEach(input => input.checked = false);
   }
 });
-
 // load saved tasks on page load
 window.addEventListener("DOMContentLoaded", loadTasks);
