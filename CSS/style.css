@@ -236,3 +236,35 @@ nav button {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
 }
+@media screen and (max-width: 380px) {
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  #navigationLinks {
+    gap: 5px;
+  }
+
+  #navigationLinks button {
+    min-width: 62px;
+    padding: 0 8px;
+    font-size: 0.72rem;
+  }
+
+  #createtask {
+    padding: 18px 12px;
+  }
+
+  #option {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .worklist label {
+    font-size: 0.78rem;
+  }
+  .Text {
+    font-size: 0.78rem;
+  }
+}

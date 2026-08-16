@@ -140,3 +140,239 @@
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
+/* ================================= */
+/*       MOBILE PROJECT PAGE         */
+/* ================================= */
+
+@media screen and (max-width: 600px) {
+
+  /* ---------- PAGE ---------- */
+
+  body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    overflow-x: hidden;
+  }
+
+  body > h1 {
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+  }
+
+  body > p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+
+  /* ---------- MAIN SECTIONS ---------- */
+
+  .section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+  /* ---------- PROJECT CARDS ---------- */
+
+  .firstsection {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    border-radius: 18px;
+  }
+
+  .project-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .project-card-header {
+    gap: 10px;
+  }
+
+  .project-card-header h2 {
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    margin: 15px 0;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  .project-info {
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+
+  /* ---------- CREATE PROJECT SECTION ---------- */
+
+  .secondsection {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+
+    padding: 20px 15px;
+    box-sizing: border-box;
+
+    border-radius: 18px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .projectsection {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .projectsection > p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+
+  /* ---------- FORM ---------- */
+
+  .projectsection form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projectsection label {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+
+
+  /* ---------- TITLE ---------- */
+
+  #projecttitle {
+    width: 100%;
+    min-height: 45px;
+    box-sizing: border-box;
+
+    padding: 0.7rem 1rem;
+
+    border-radius: 15px;
+    font-size: 0.9rem;
+  }
+
+
+  /* ---------- DESCRIPTION ---------- */
+
+  #projectdes {
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+
+    padding: 0.8rem 1rem;
+
+    border-radius: 15px;
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+  }
+
+
+  /* ---------- CATEGORY ---------- */
+
+  #taskcategory {
+    width: 100%;
+    min-height: 42px;
+
+    padding: 0 10px;
+
+    border-radius: 12px;
+    font-size: 0.85rem;
+  }
+
+
+  /* ---------- DATE ---------- */
+
+  #taskDate {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+
+    padding: 0.5rem;
+
+    border-radius: 12px;
+    font-size: 0.85rem;
+  }
+
+
+  /* ---------- CREATE BUTTON ---------- */
+
+  #createproject {
+    width: 100%;
+    max-width: none;
+    height: 42px;
+
+    margin-top: 5px;
+
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+}
+
+
+/* ================================= */
+/*       VERY SMALL PHONES           */
+/* ================================= */
+
+@media screen and (max-width: 380px) {
+
+  body {
+    padding: 10px;
+  }
+
+  body > h1 {
+    font-size: 1.5rem;
+  }
+
+  .firstsection {
+    padding: 10px;
+  }
+
+  .secondsection {
+    padding: 15px 12px;
+  }
+
+  .project-card {
+    padding: 12px;
+  }
+
+  .project-card-header h2 {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.82rem;
+  }
+
+  .project-info {
+    font-size: 0.8rem;
+  }
+}
