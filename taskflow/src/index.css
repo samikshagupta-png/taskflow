@@ -1,0 +1,271 @@
+/* style.css */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+nav{
+    height: 7vh;
+    color: cadetblue;
+    background-color: rgb(221, 224, 228);
+    display: flex;
+    justify-content: space-between;
+}
+#option{
+  gap:1rem;
+  
+}
+.brand{
+  font-family: 'Poppins', sans-serif;   
+  font-size: 2rem;                      
+  font-weight: 700;                     
+  letter-spacing: 2px;                  
+  text-transform: uppercase;            
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* subtle shadow */
+  margin: 0;
+}
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+nav button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #6ea0c5;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+#navigationLinks{
+  display: flex;
+  justify-content: space-around;
+}
+#dashboard{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+}
+#homebtn{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+
+}
+#projects{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+
+}
+#analytics{
+  height: 3rem;
+  width: 6rem;
+  border-radius: 1.5rem;
+  color: #6ea0c5;
+  background-color: rgb(251, 251, 242);
+  border: 2px solid ;
+}
+#navigationLinks button:hover{
+  height: 3.1rem;
+  width: 6.1rem;
+  transition: all ease-in-out ;
+  background-color: rgb(229, 229, 236);
+  color: rgb(230, 143, 143);
+
+}
+/* .nav-btn {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+} */
+.active {
+  background-color: rgb(229, 229, 236);
+  color: rgb(230, 143, 143);
+}
+#content{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+}
+#createtask{
+  width: 69%;
+  background-color: rgb(230, 243, 238);
+  border-radius: 1.5rem;
+  /* height: 70vh; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero{
+  
+    width: 100%;
+    /* height: 70vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.worklist input{
+    min-height: 50px;
+    width: 100%;
+    padding: 0 1rem;
+    outline: none;
+    display: flex;
+    border-radius: 2rem;
+    border:none;
+    flex-wrap: wrap;
+   
+}
+.worklist label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.checkbox-group {
+  display: flex;
+  gap: 15px; /* spacing between items */
+  
+}
+.worklist input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #6ea0c5;     /* modern color for radio buttons */
+  
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center; /* align text with checkbox */
+}
+
+.worklist input:focus {
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+#task:hover{
+    border: 2px solid rgb(80, 76, 76);
+    min-height: 52px;
+}
+#createbtn{
+  background-color: #b7bbbe;
+  width: 4rem;
+  border: none;
+  border-radius: 1.5rem;
+  height: 1.9rem;
+  width: 6rem;
+}
+#priority{
+  color:gray;
+  background-color: rgb(216, 211, 204);
+}
+#createbtn:hover{
+  background-color: #6ea0c5;
+  color: white;
+  border: 2px solid #6ea0c5;
+}
+#task{
+  width: 91%;
+}
+.worklist {
+  display: flex;
+  flex-direction: column;   /* stack neatly */
+  align-items: flex-start;  /* align to left */
+
+}
+.onetask{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.Text{
+    color: gray;
+    font-weight: bold;
+    border: none;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    width:30vw;
+    height: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #c2f1ef;
+    cursor: pointer;
+}
+.Text:hover{
+    color: black;
+    border: 1px solid ;
+}
+.done{
+    height: 5.1vh;
+    width: 2rem;
+    background-color: rgb(172, 195, 150);
+    border: none;
+}
+.overdue{
+    height: 5.1vh;
+    width: 2rem;
+    background-color: rgb(217, 143, 103);
+    border: none;
+
+}
+.recenttask ul li {
+  margin-bottom: 15px;   /* adds gap between tasks */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+@media screen and (max-width: 380px) {
+
+  .brand {
+    font-size: 1.2rem;
+  }
+
+  #navigationLinks {
+    gap: 5px;
+  }
+
+  #navigationLinks button {
+    min-width: 62px;
+    padding: 0 8px;
+    font-size: 0.72rem;
+  }
+
+  #createtask {
+    padding: 18px 12px;
+  }
+
+  #option {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .worklist label {
+    font-size: 0.78rem;
+  }
+  .Text {
+    font-size: 0.78rem;
+  }
+}
