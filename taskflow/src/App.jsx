@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import Navbar from "./Navbar";
+import Navigation from "./Navigation";
 
 function App() {
   const [task, setTask] = useState("");
@@ -16,18 +18,10 @@ function App() {
 
   return (
     <>
-      <nav>
-        <h1 className="brand">Taskflow</h1>
-        <button id="themebtn">🌞</button>
-      </nav>
-      <hr></hr>
-      <br></br>
-      <div id="navigationLinks">
-        <button id="homebtn">Home</button>
-        <button id="dashboard">Dashboard</button>
-        <button id="projects">Projects</button>
-        <button id="analytics">Analytics</button>
-      </div>
+      <Navbar/>
+      <hr/>
+      <Navigation/>
+
 
       <br></br>
       <h2 id="username"></h2>
@@ -86,7 +80,7 @@ function App() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div><br></br>
           </div>
         </div>
       </div>
