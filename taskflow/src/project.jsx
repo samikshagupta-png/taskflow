@@ -1,13 +1,10 @@
 import React from "react";
-import "./modal.css"; // ✅ Import CSS properly
-import Navbar from './Navbar.jsx';
-import Navigation from "./Navigation.jsx";
+import "./project.css"; // ✅ Import CSS properly
 
 const Project = () => {
   return (
     <>
-    <Navbar/>
-    <Navigation/>
+    
     <div>
       <h1>My projects</h1>
       <p>

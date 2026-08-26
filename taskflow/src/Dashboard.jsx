@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./dashboard.css";
-import Navbar from "./Navbar.jsx";
-import Navigation from "./Navigation.jsx";
+
 
 const Dashboard = () => {
+  
   const [tasks, setTasks] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -49,8 +49,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Navbar />
-      <Navigation />
+      
 
       <div className="mainbox">
         <div className="status">

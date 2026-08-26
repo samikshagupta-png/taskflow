@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./analytics.css";
 
-const AnalyticsPage = () => {
+
+const Analytics = () => {
   const [tasks, setTasks] = useState([]);
 
   // Load tasks from localStorage on mount
@@ -48,6 +49,8 @@ const AnalyticsPage = () => {
       ));
 
   return (
+    <>
+    
     <div className="main">
       <div
         className="high"
@@ -76,7 +79,8 @@ const AnalyticsPage = () => {
         {renderTasks("low")}
       </div>
     </div>
+    </>
   );
 };
 
-export default AnalyticsPage;
+export default Analytics;
