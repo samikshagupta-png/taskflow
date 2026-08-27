@@ -69,7 +69,7 @@ const Home = () => {
                 value={taskValue}
                 onChange={(e) => setTaskValue(e.target.value)}
               />
-              <p>Select Priority:</p>
+              <p>Select Priority:</p><br></br>
               <label id="option">
                 <input
                   type="radio"

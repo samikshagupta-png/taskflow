@@ -8,13 +8,14 @@ import Dashboard from "./Dashboard";
 import Project from "./Project";
 import Analytics from "./Analytics";
 
+
 function App() {
   return (
     <>
       <Navbar />
-      <hr />
+      <hr /><br></br>
       <Navigation />
-
+      <br></br>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />

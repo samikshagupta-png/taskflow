@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css"; // ✅ Import your CSS
+import "./App.css"; 
 
 const Navbar = () => {
   const gradients = [
