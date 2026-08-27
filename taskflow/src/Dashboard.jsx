@@ -52,7 +52,8 @@ const Dashboard = () => {
       
 
       <div className="mainbox">
-        <div className="status">
+        <div className="first">
+          <div className="status">
           <div id="totaltask">Total Tasks: {totalTasks}</div>
           <div id="completed">Completed: {completedTasks}</div>
           <div id="pending">Pending: {pendingTasks}</div>
@@ -72,9 +73,11 @@ const Dashboard = () => {
           </ul>
         </div>
 
+        </div>
         <br />
 
-        <form className="searchlist" onSubmit={handleSearch}>
+        <div className="searchsection">
+          <form className="searchlist" onSubmit={handleSearch}>
           <input
             type="text"
             id="searchtask"
@@ -97,6 +100,7 @@ const Dashboard = () => {
             <b>search</b>
           </button>
         </form>
+        </div>
 
         <div className="searchlists">
           {searchResults.length > 0 && (

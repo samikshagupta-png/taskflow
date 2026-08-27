@@ -1,4 +1,13 @@
-
+.mainbox {
+  display: flex;
+  flex-direction: column;   /* stack rows vertically */
+  gap: 2rem;                /* spacing between rows */
+  width: 100%;
+}
+.first{
+    display: flex;
+    justify-content: space-between;
+}
 .status {
     display: flex;
     flex-direction: column;
@@ -65,12 +74,8 @@
 .searchlist input:focus {
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
-.mainbox{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    
-}
+  
+
 #recenttasksection{
     width: 40%;
     background-color: #d0c39b;
@@ -86,7 +91,7 @@
 }
 #searchtask {
     min-height: 50px;
-    width: 80%;
+    width: 60%;
     padding: 0 1rem;
     outline: none;
     display: flex;
@@ -138,4 +143,80 @@
   color:gray;
   background-color: rgb(216, 211, 204);
 
+}
+.searchsection{
+    width: 60%;
+    margin-left: 3rem;
+
+}
+/* General mobile adjustments */
+@media (max-width: 768px) {
+  .first {
+    flex-direction: column;       /* stack status + recent tasks */
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .status, 
+  #recenttasksection {
+    width: 95%;                   /* full width for clarity */
+  }
+
+  #totaltask, #completed, #pending {
+    height: auto;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  #recenttasksection {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .searchsection {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .searchlist {
+    flex-direction: column;       /* stack input, dropdown, button */
+    gap: 1rem;
+    width: 100%;
+  }
+
+  #searchtask {
+    width: 100%;                  /* search bar fills width */
+    min-height: 45px;
+    font-size: 1rem;
+  }
+
+  .prioritydiv, .statusdiv {
+    width: 100%;                  /* dropdowns expand full width */
+  }
+
+  #searchbtn {
+    width: 100%;                  /* button full width */
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .mainbox {
+    gap: 1rem;
+  }
+
+  #totaltask, #completed, #pending {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  #recenttasksection {
+    font-size: 0.9rem;
+  }
+
+  .searchlist {
+    gap: 0.8rem;
+  }
 }
